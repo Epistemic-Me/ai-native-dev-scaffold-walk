@@ -5,8 +5,8 @@ This is the **Crawl stage** of the Crawl → Walk → Run AI-native maturity mod
 ## You Are Here: Crawl / Walk / Run
 
 - **Crawl** *(← you are here)* — Context Foundation only. `CLAUDE.md` + `docs/.context/` + `MCP_SERVERS.md` + credential policy.
-- **Walk** — Paper Trail + Gate. Graduate to [`ai-native-dev-scaffold`](https://github.com/Epistemic-Me/ai-native-dev-scaffold) when the context here is stable.
-- **Run** — Compounding Intelligence. Graduate to [`ai-native-dev-scaffold-compound`](https://github.com/Epistemic-Me/ai-native-dev-scaffold-compound) after 2 sprints of Walk maturity.
+- **Walk** — Paper Trail + Gate. Graduate to [`ai-native-dev-scaffold-walk`](https://github.com/Epistemic-Me/ai-native-dev-scaffold-walk) when the context here is stable.
+- **Run** — Compounding Intelligence. Graduate to [`ai-native-dev-scaffold-run`](https://github.com/Epistemic-Me/ai-native-dev-scaffold-run) after 2 sprints of Walk maturity.
 
 **Don't skip Crawl.** 95% of enterprise AI pilots stall because teams jump to workflows without first making their project legible (MIT NANDA, 2025). Crawl is cheap (1–3 weeks) and unblocks everything.
 
@@ -77,7 +77,7 @@ See `docs/.context/MCP_SERVERS.md` for per-server credential paths and the Conte
 
 ## When to Graduate to Walk
 
-You're ready for `ai-native-dev-scaffold` (Walk) when:
+You're ready for `ai-native-dev-scaffold-walk` (Walk) when:
 
 - Every file in `docs/.context/` has real content (no placeholder text)
 - A new engineer can open the repo and understand the project in under an hour

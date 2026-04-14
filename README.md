@@ -30,8 +30,8 @@ AI-native development is a three-stage maturity staircase. Each stage has to be 
 | Stage | What it is | Scaffold repo |
 |---|---|---|
 | **Crawl** *(← you are here)* | Context Foundation: `CLAUDE.md`, `docs/.context/` core set, `MCP_SERVERS.md`, credential policy. No PR workflow. | `ai-native-dev-scaffold-crawl` (this repo) |
-| **Walk** | Paper Trail + Gate: Crawl + 5-stage PR lifecycle (`/start-pr → develop → /review-pr → /check-pr → /close-pr`) + docs-gate CI + ADR index. | [`ai-native-dev-scaffold`](https://github.com/Epistemic-Me/ai-native-dev-scaffold) |
-| **Run** | Compounding Intelligence: Walk + `/stakeholder-alignment` + `/compound` + `/process-transcript` + self-model API integration. | [`ai-native-dev-scaffold-compound`](https://github.com/Epistemic-Me/ai-native-dev-scaffold-compound) |
+| **Walk** | Paper Trail + Gate: Crawl + 5-stage PR lifecycle (`/start-pr → develop → /review-pr → /check-pr → /close-pr`) + docs-gate CI + ADR index. | [`ai-native-dev-scaffold-walk`](https://github.com/Epistemic-Me/ai-native-dev-scaffold-walk) |
+| **Run** | Compounding Intelligence: Walk + `/stakeholder-alignment` + `/compound` + `/process-transcript` + self-model API integration. | [`ai-native-dev-scaffold-run`](https://github.com/Epistemic-Me/ai-native-dev-scaffold-run) |
 
 ## Why Crawl Matters
 
@@ -58,7 +58,7 @@ rm -rf .git && git init && git add -A && git commit -m "init: crawl scaffold"
 claude "Read CLAUDE.md and docs/.context/. Tell me what a new engineer still couldn't figure out in under an hour."
 
 # 4. When all core docs are populated and MCP_SERVERS.md is declared, graduate to:
-#    https://github.com/Epistemic-Me/ai-native-dev-scaffold
+#    https://github.com/Epistemic-Me/ai-native-dev-scaffold-walk
 ```
 
 ## What's in this scaffold
@@ -99,7 +99,7 @@ Context engineering is the discipline of filling the context window with just th
 - `docs/decisions/` (ADRs) — shows up at Walk once you start tracking decisions
 - `/stakeholder-alignment`, `/compound`, `/process-transcript` — Run-stage compounding loop
 
-If you want those, you're ready for `ai-native-dev-scaffold` (Walk) or `ai-native-dev-scaffold-compound` (Run).
+If you want those, you're ready for `ai-native-dev-scaffold-walk` (Walk) or `ai-native-dev-scaffold-run` (Run).
 
 ## References
 
