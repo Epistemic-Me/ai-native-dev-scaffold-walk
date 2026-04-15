@@ -59,7 +59,7 @@ Example usage: `/project:context-update`
 
 ## Why this is the only command at Crawl
 
-Crawl is about making the project legible, not about running workflows. If you find yourself wanting `/start-pr`, `/review-pr`, or `/compound`, you're ready to graduate to [`ai-native-dev-scaffold-walk`](https://github.com/Epistemic-Me/ai-native-dev-scaffold-walk) (Walk) or [`ai-native-dev-scaffold-run`](https://github.com/Epistemic-Me/ai-native-dev-scaffold-run) (Run).
+Crawl is about making the project legible, not about running workflows. If you find yourself wanting `/start-pr`, `/review-pr`, or `/compound`, you're ready to graduate to [`ai-native-dev-scaffold-run`](https://github.com/Epistemic-Me/ai-native-dev-scaffold-run) (Walk) or [`ai-native-dev-scaffold-sprint`](https://github.com/Epistemic-Me/ai-native-dev-scaffold-sprint) (Run).
 
 ## References
 

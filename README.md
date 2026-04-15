@@ -1,113 +1,124 @@
-# AI-Native Development Scaffold — Crawl Stage
+# AI-Native Development Scaffold — Walk Stage
 
-> Context Foundation. The project is legible to both humans and agents. No PR workflow yet.
-
-This scaffold is the **Crawl** stage of a Crawl → Walk → Run maturity staircase. Its entire job is to make a project understandable to AI agents and new engineers in under an hour — before you attempt any PR lifecycle or compounding loop.
+> **You must be here or you have problems.** Context foundation + 5-stage PR lifecycle + docs-gate CI. The operational baseline for any AI-native engineering team.
 
 ```
-Crawl foundation:
-  CLAUDE.md                                 (under 300 lines, human-curated)
-  docs/.context/
-    ├── JTBD.md                             (jobs to be done, evidence-backed)
-    ├── ICP.md                              (ideal customer profile)
-    ├── ARCHITECTURE-TAXONOMY.md            (system layers + boundaries)
-    ├── KNOWN_ISSUES.md                     (active bugs + tech debt)
-    ├── ROADMAP.md                          (phase-level plan)
-    ├── RELATED_REPOS.md                    (cross-repo context)
-    ├── MCP_SERVERS.md                      (tool registry)
-    ├── ACTIVE_PRS.md                       (placeholder — populated by Walk)
-    └── RECENT_DECISIONS.md                 (placeholder — populated by /decision at Walk)
-  .claude/commands/project/
-    └── context-update.md                   (the one agent command you need at Crawl)
+/start-pr → develop → /review-pr → /check-pr → /close-pr
 ```
 
-**Deliberately absent**: `/start-pr`, `/review-pr`, docs-gate CI, ADR index. The Crawl stage proves the context foundation is independent of any workflow. When you're ready for the paper trail + gate, graduate to the Walk scaffold.
+This scaffold is the **Walk** stage of a Walk → Run → Sprint AI-native maturity staircase. It gives your team an enforceable PR paper trail, CI-blocking docs-gate, and AI-ready context files — in a working repo you clone and start using on Monday.
 
-## You Are Here: Crawl / Walk / Run
+**Tool-agnostic by design.** Works with GitHub Copilot CLI, Copilot Cloud Agents, Claude Code, or any AI tool that can read markdown command files. The context is in the `docs/.context/` and `.claude/commands/` files — the harness is your choice.
 
-AI-native development is a three-stage maturity staircase. Each stage has to be solid before the next is meaningful.
+## You Are Here: Walk / Run / Sprint
 
 | Stage | What it is | Scaffold repo |
 |---|---|---|
-| **Crawl** *(← you are here)* | Context Foundation: `CLAUDE.md`, `docs/.context/` core set, `MCP_SERVERS.md`, credential policy. No PR workflow. | `ai-native-dev-scaffold-crawl` (this repo) |
-| **Walk** | Paper Trail + Gate: Crawl + 5-stage PR lifecycle (`/start-pr → develop → /review-pr → /check-pr → /close-pr`) + docs-gate CI + ADR index. | [`ai-native-dev-scaffold-walk`](https://github.com/Epistemic-Me/ai-native-dev-scaffold-walk) |
-| **Run** | Compounding Intelligence: Walk + `/stakeholder-alignment` + `/compound` + `/process-transcript` + self-model API integration. | [`ai-native-dev-scaffold-run`](https://github.com/Epistemic-Me/ai-native-dev-scaffold-run) |
+| **Walk** *(← you are here)* | Context Foundation + 5-stage PR lifecycle + docs-gate CI. The operational baseline. Designed for walkers, not sprinters. | `ai-native-dev-scaffold-walk` (this repo) |
+| **Run** | Walk + authoritative per-feature specs + product slop filter + compound learning from your own PR history. Mature engineering org with institutional memory. | [`ai-native-dev-scaffold-run`](https://github.com/Epistemic-Me/ai-native-dev-scaffold-run) |
+| **Sprint** | Run + digital twins of external stakeholders + `/stakeholder-alignment` + `/compound` + `/process-transcript` + self-model API. AI-native with the customer voice baked into every PR. | [`ai-native-dev-scaffold-sprint`](https://github.com/Epistemic-Me/ai-native-dev-scaffold-sprint) |
 
-## Why Crawl Matters
+**Don't skip Walk.** 95% of enterprise AI pilots stall because teams jump to workflows without first making their project legible (MIT NANDA, 2025). Walk is the cheap investment (1–3 weeks) that unblocks everything downstream.
 
-GitHub's own "Continuous AI" guidance uses the same crawl → walk → run progression for agentic workflows. MIT NANDA's 2025 "GenAI Divide" report found **95% of enterprise AI pilots** stall with no measurable P&L impact — the root cause is the "learning gap" (missing organizational context), not model quality.
-
-Teams jump straight to `/start-pr`-style workflows or compound loops without first making their project legible. The agent starts from zero every session. Secrets and MCP servers are wired up tribally. Every engineer reinvents the setup. That's the 95%.
-
-Crawl is the cheap investment (1–3 weeks) that unblocks everything downstream.
-
-## Quick Start
+## Quick Start (Walker Week 1)
 
 ```bash
-# 1. Clone and reinitialize for your project
-git clone https://github.com/Epistemic-Me/ai-native-dev-scaffold-crawl.git my-project
+# 1. Clone and reinitialize
+git clone https://github.com/Epistemic-Me/ai-native-dev-scaffold-walk.git my-project
 cd my-project
-rm -rf .git && git init && git add -A && git commit -m "init: crawl scaffold"
+rm -rf .git && git init && git add -A && git commit -m "init: walk scaffold"
 
-# 2. Fill in your project's context docs (start with stubs, iterate with AI)
-#    - CLAUDE.md           → project instructions for Claude Code
-#    - docs/.context/*.md  → the project brain
-#    - docs/.context/MCP_SERVERS.md → which MCP servers this repo uses
+# 2. Fill in your project's context docs
+#    docs/.context/*.md — the project brain
+#    docs/.context/MCP_SERVERS.md — which MCP servers this repo uses
+#    CLAUDE.md — project instructions (under 300 lines)
 
-# 3. Ask an AI agent to cold-read your repo and tell you what's missing
-claude "Read CLAUDE.md and docs/.context/. Tell me what a new engineer still couldn't figure out in under an hour."
+# 3. Start your first PR
+/project:start-pr 001 my-first-feature
+#    → Creates branch + docs scaffold (RESEARCH.md / TEST-STRATEGY.md / IMPLEMENTATION-PLAN.md)
 
-# 4. When all core docs are populated and MCP_SERVERS.md is declared, graduate to:
-#    https://github.com/Epistemic-Me/ai-native-dev-scaffold-walk
+# 4. Iterate with AI on the docs BEFORE you write code
+#    → This is where 60-70% of your thinking happens
+
+# 5. Execute, review, gate, close
+/project:review-pr 001   # AI code review + verdict
+/project:check-pr 001    # Run docs-gate locally
+/project:close-pr 001    # Merge + archive + update ACTIVE_PRS.md
 ```
+
+See `WEEK-1-QUICKSTART.md` for the one-page walker onboarding guide.
 
 ## What's in this scaffold
 
-### `CLAUDE.md`
-Root-level project instructions. Under 300 lines (per Anthropic best practices). Includes credential policy.
+### `.claude/commands/project/` — the command library
+The Walk-stage command set, treated as code (versioned, reviewed, curated):
 
-### `docs/.context/` — the project brain
-Every file Claude Code reads at session start:
+- **`/start-pr`** — Create branch + 3 docs (research / test-strategy / implementation plan)
+- **`/execute-pr`** — Implement from the plan with progress tracking (optional; you can just work normally)
+- **`/review-pr`** — AI code review + verdict written to REVIEW.md
+- **`/check-pr`** — Run docs-gate locally (same checks as CI)
+- **`/close-pr`** — Merge + archive docs + update `ACTIVE_PRS.md`
+- **`/decision`** — Create an Architecture Decision Record
+- **`/context-update`** — Refresh `docs/.context/*` against current repo state
+- **`/context-status`** — Staleness audit across context docs
+
+### `docs/.context/` — the project brain (AI reads at session start)
 
 | File | Purpose |
 |---|---|
-| `JTBD.md` | Jobs to be done, with evidence strength per claim |
+| `JTBD.md` | Jobs to be done, with evidence per claim |
 | `ICP.md` | Ideal customer profile with pain points |
-| `ARCHITECTURE-TAXONOMY.md` | System layers, boundaries, what's Engine vs Platform vs App |
-| `KNOWN_ISSUES.md` | Active bugs, tech debt, acknowledged gaps |
-| `ROADMAP.md` | Phase-level plan (not sprint-level) |
-| `RELATED_REPOS.md` | Cross-repo context — which sibling repos exist and what they own |
-| `MCP_SERVERS.md` | Standalone tool registry — which MCP servers, why, which tickets need each, credential paths |
-| `ACTIVE_PRS.md` | Placeholder (populated automatically at Walk stage) |
-| `RECENT_DECISIONS.md` | Placeholder (populated by `/project:decision` at Walk stage) |
+| `ARCHITECTURE-TAXONOMY.md` | System layers, boundaries, ownership |
+| `KNOWN_ISSUES.md` | Active bugs + tech debt |
+| `ROADMAP.md` | Phase-level plan |
+| `RELATED_REPOS.md` | Cross-repo context |
+| `MCP_SERVERS.md` | Standalone tool registry — which MCP servers, why, credential paths |
+| `ACTIVE_PRS.md` | Populated by `/start-pr` + `/close-pr` |
+| `RECENT_DECISIONS.md` | Populated by `/decision` |
 
-### `.claude/commands/project/context-update.md`
-The one agent command you get at Crawl. It inspects `docs/.context/*` and flags stale content. Everything else (`/start-pr`, ADRs, `/compound`) comes at higher stages.
+### `.github/workflows/pr-docs-gate.yml` — the CI gate
+Blocks merge if RESEARCH.md, TEST-STRATEGY.md, or IMPLEMENTATION-PLAN.md is missing from the PR's `docs/prs/{folder}/`. Walker-proof enforcement.
 
-## Philosophy
+### `docs/prs/` — the paper trail
+Per-PR folders with RESEARCH / TEST-STRATEGY / IMPLEMENTATION-PLAN / IMPLEMENTATION / REVIEW. Archived to `_archive/` after merge. Becomes your institutional memory.
 
-> "AI-native is not AI-augmented. The difference is explicit context engineering. Without it you get autocomplete with extra steps."
+### `scripts/pr_docs_check.py` — the gate validator
+Walk-level checks (blocking): PR folder exists, RESEARCH.md ≥50 bytes, TEST-STRATEGY.md ≥50 bytes, IMPLEMENTATION-PLAN.md ≥50 bytes. Extensible.
 
-Context engineering is the discipline of filling the context window with just the right information for the next step (Karpathy, 2025). The 4 primitives — instructions, retrieved knowledge, tool feedback, conversation history — are what every AI interaction runs on. This scaffold installs the repo-level versions of the first two.
+## Why Walk Matters
 
-## Not included (on purpose)
+GitHub's own "Continuous AI" guidance uses the same walk → run → sprint progression for agentic workflows. MIT NANDA's 2025 "GenAI Divide" report found **95% of enterprise AI pilots** stall because of the "learning gap" — missing organizational context, not model quality.
 
-- `.github/workflows/pr-docs-gate.yml` — docs-gate CI is a Walk-stage artifact
-- `.claude/commands/project/{start-pr,review-pr,check-pr,close-pr}.md` — workflow commands are Walk-stage
-- `scripts/pr_docs_check.py` — Walk's validation logic
-- `docs/prs/` folder structure — no PR workflow at Crawl
-- `docs/decisions/` (ADRs) — shows up at Walk once you start tracking decisions
-- `/stakeholder-alignment`, `/compound`, `/process-transcript` — Run-stage compounding loop
+The Walk stage is the operational baseline that makes everything else possible:
+- Context files are standardized (not tribal)
+- Commands are curated (not invented by each sprinter privately)
+- Every PR has an enforceable paper trail (not "read the diff and trust")
+- AI sessions start with full project context, deterministically (not "catch Claude up first")
 
-If you want those, you're ready for `ai-native-dev-scaffold-walk` (Walk) or `ai-native-dev-scaffold-run` (Run).
+## GitHub Copilot Compatibility
+
+This scaffold is **tool-agnostic**. Because commands are markdown files with explicit context, the AI harness matters less than model inference:
+
+- **GitHub Copilot CLI**: read commands as prompt templates; invoke via `copilot suggest`
+- **Copilot Cloud Agents**: trigger asynchronous review from Jira / GitHub Issues
+- **Claude Code CLI**: native slash command execution
+- **Cursor / Windsurf / Codex**: read commands from `.claude/commands/project/`
+
+The context engineering foundation is the point, not the tool. Pick whichever fits your org's budget and adoption curve.
+
+## Design Principle: Walker Floor, Not Sprinter Ceiling
+
+80-90% of your engineers are walkers — they want AI to remove busywork, not to become AI researchers. This scaffold is designed for them. The Walk stage is boring on purpose. The interesting stuff (digital twins, compound loops, customer alignment) is at the Sprint stage, and you get there by walking first.
+
+If you find yourself creating private commands that other engineers don't know about, you're creating tribal knowledge. Treat commands like code: PR them into this scaffold, document them, let the team benefit.
 
 ## References
 
-- **Anthropic — Claude Code best practices**: CLAUDE.md should be under 300 lines, human-curated, treated like code. https://code.claude.com/docs/en/best-practices
+- **Anthropic — Claude Code best practices**: CLAUDE.md <300 lines, human-curated. https://code.claude.com/docs/en/best-practices
 - **Karpathy — context engineering definition** (June 2025): https://x.com/karpathy/status/1937902205765607626
 - **Simon Willison — Context Engineering** (June 2025): https://simonwillison.net/2025/jun/27/context-engineering/
 - **MIT NANDA — GenAI Divide 2025** (95% enterprise AI pilot failure): https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/
-- **GitHub — Continuous AI / Agentic Workflows** (uses crawl→walk→run framing): https://github.blog/ai-and-ml/automate-repository-tasks-with-github-agentic-workflows/
+- **GitHub — Continuous AI / Agentic Workflows**: https://github.blog/ai-and-ml/automate-repository-tasks-with-github-agentic-workflows/
 - **Astrix Security — State of MCP Server Security 2025**: https://astrix.security/learn/blog/state-of-mcp-server-security-2025/
 
 ## License
