@@ -1,6 +1,6 @@
-# Context Update (Crawl stage)
+# Context Update (Walk stage)
 
-Refresh `docs/.context/` files against current reality. At Crawl stage, this is the **only** slash command you have — and it's the one you need most.
+Refresh `docs/.context/` files against current reality. At Walk stage, this is the **only** slash command you have — and it's the one you need most.
 
 ## When to Use
 
@@ -43,7 +43,7 @@ Example usage: `/project:context-update`
 
 6. **Apply approved updates** and report what changed:
    ```
-   Context Updated (Crawl stage):
+   Context Updated (Walk stage):
    - JTBD.md: added evidence from 2 new interviews
    - KNOWN_ISSUES.md: removed 1 fixed bug, added 2 new observations
    - MCP_SERVERS.md: no changes
@@ -52,16 +52,16 @@ Example usage: `/project:context-update`
 
 ## What this command does NOT do
 
-- **Does not** create PR docs folders — there is no PR workflow at Crawl
-- **Does not** run docs-gate CI — there is no CI at Crawl
+- **Does not** create PR docs folders — there is no PR workflow at Walk
+- **Does not** run docs-gate CI — there is no CI at Walk
 - **Does not** touch `ACTIVE_PRS.md` or `RECENT_DECISIONS.md` beyond noting they're placeholders — those are populated at the Walk stage
 - **Does not** call any external API or MCP server — pure file reading and editing
 
-## Why this is the only command at Crawl
+## Why this is the only command at Walk
 
-Crawl is about making the project legible, not about running workflows. If you find yourself wanting `/start-pr`, `/review-pr`, or `/compound`, you're ready to graduate to [`ai-native-dev-scaffold-run`](https://github.com/Epistemic-Me/ai-native-dev-scaffold-run) (Walk) or [`ai-native-dev-scaffold-sprint`](https://github.com/Epistemic-Me/ai-native-dev-scaffold-sprint) (Run).
+Walk is about making the project legible, not about running workflows. If you find yourself wanting `/start-pr`, `/review-pr`, or `/compound`, you're ready to graduate to [`ai-native-dev-scaffold-run`](https://github.com/Epistemic-Me/ai-native-dev-scaffold-run) (Walk) or [`ai-native-dev-scaffold-sprint`](https://github.com/Epistemic-Me/ai-native-dev-scaffold-sprint) (Run).
 
 ## References
 
-- See `CLAUDE.md` → "When to Graduate to Walk" for the exit criteria from Crawl
+- See `CLAUDE.md` → "When to Graduate to Walk" for the exit criteria from Walk
 - See `docs/.context/MCP_SERVERS.md` for the tool registry this command should treat as the source of truth

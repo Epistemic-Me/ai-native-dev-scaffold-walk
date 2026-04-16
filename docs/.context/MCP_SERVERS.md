@@ -2,7 +2,7 @@
 
 Every MCP (Model Context Protocol) server this repo uses, why it's here, which ticket types need it, and where its credentials live.
 
-This file is part of the **Crawl** stage of the Crawl/Walk/Run maturity model. Before a team can run the PR lifecycle reliably, tool access must be declared and consistent across developers and agent sessions. See `CLAUDE.md` → "Credential Policy" for the companion secret-handling rules.
+This file is part of the **Walk** stage of the Walk/Run/Sprint maturity model. Before a team can run the PR lifecycle reliably, tool access must be declared and consistent across developers and agent sessions. See `CLAUDE.md` → "Credential Policy" for the companion secret-handling rules.
 
 ## How to use this file
 
@@ -54,7 +54,7 @@ Every ticket description includes a **Context Declaration** block alongside acce
 **Related PRs**: #123, #145
 ```
 
-This is the Crawl-stage contract: you declare context requirements **before** work starts, not mid-PR when something breaks.
+This is the Walk-stage contract: you declare context requirements **before** work starts, not mid-PR when something breaks.
 
 ## Deprecated / Removed servers
 
